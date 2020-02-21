@@ -1,0 +1,193 @@
+ .root{
+     justify-content: "space-around";
+    display: "flex",;
+    padding-top: "6px";
+    padding-bottom: "6px";
+}
+
+.title{
+    font-size: 14%;
+}
+.titleAndPin{
+    display: flex;
+    justify-content: space-between;
+}
+.pos{
+    margin-bottom: 12%;
+}
+
+.pinImage{
+    width:6%;
+    margin-right: 2%;
+}
+
+.wholeTitle{
+    margin-left: 3%;
+}
+
+
+.MuiCard-root {
+    margin-top: 5%;
+    padding: 1%;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputs{
+    display: grid;
+    padding: 2%;
+    
+}
+
+.miniNote{
+    font-weight: 50%;
+}
+
+.MuiDialogTitle-root {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 5px 13px;
+}
+/* .MuiIconButton-root {
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 1px;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+} */
+/* .notesBackground{
+   margin-top: 8%;
+    margin-left: 14%;
+} */
+
+/* .background{
+    display: flex;
+    justify-content: space-around;
+} */
+
+     /* .actionButtons{
+    display: flex;
+    justify-content: space-between;
+} */
+   
+
+.closeButton{
+    margin-left: 21%;
+    margin-top: 2%;
+}
+
+.wholeNoteCard{
+    width:50%;
+    margin: auto;
+    border: ridge;   
+}
+
+.wholeMiniNoteCard{
+    width:50%;
+    height: 2vh;
+    margin: auto;
+    border: ridge;
+    /* box-shadow: 0px 10px 10px #0000001c; */
+}
+
+.alertDialogTitle{
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 5px;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+}
+
+.miniIcons{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.miniNote{
+    margin-top: -3.5%;
+     display: flex;
+     width:100%;
+    flex-direction: row;
+}
+
+  .dropbtn{
+    height: 5em;
+    width:7em
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+
+}
+
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+
+  .takeNote{
+      width: 69%;
+      padding: 3%;
+  }
+.notePage{
+    width: 100%;
+    height: 100vh;
+    background-color: yellowgreen;
+}
+
+ .actionButtons{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.alert{
+    padding: 2%;
+}
+
+.initialNoteCard{
+    width:48%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

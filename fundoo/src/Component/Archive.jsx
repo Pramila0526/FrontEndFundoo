@@ -53,21 +53,7 @@ class Archive extends Component {
 
         return (
             <Container style={{ marginTop: '6em' }} >
-                {/* <ClickAwayListener onClickAway={this.onHandleClickaway}>
-                    <div>
-                        {
-                            this.state.clickAway ?
-                                <WholeNote
-                                    title={this.state.title}
-                                    description={this.state.description}
-                                    pin={this.state.pin}
-                                    handleChangeText={this.handleChangeText}
-                                    onHandleClickaway={this.onHandleClickaway}
-                                /> :
-                                < MiniNote handleClick={this.handleClick} />
-                        }
-                    </div>
-                </ClickAwayListener> */}
+
                 <div style={{
                     display: 'flex',
                     flexWrap: 'wrap',

@@ -65,20 +65,12 @@ export class Login extends Component {
             userLogin(user)
                 .then(Response => {
                     console.log('data', Response.data.data);
-                    // let Name = Response.user.firstname + " " + Response.user.lastname;
-                    // console.log(Name);
-                    // localStorage.setItem("Name", Name)
-                    // localStorage.setItem("Email", Response.user.email)
-                    // console.log("email")
-                    // localStorage.setItem("ProfilePic", Response.user.profile)
-                    // localStorage.setItem("Name", Response.data.data)
-                    // localStorage.setItem("email", Response.data.email)
+
                     localStorage.setItem("FirstName", Response.data.userData.firstName)
                     localStorage.setItem("LastName", Response.data.userData.lastName)
                     localStorage.setItem("Email", Response.data.userData.email)
                     localStorage.setItem("Token", Response.data.data)
-                    // localStorage.setState("FirstName", Response.data.data.firstName)
-                    // console.log("success")
+
                     console.log("Res", Response)
                     alert(`Login Successfull!!`);
                     this.props.history.push("/dashboard/note");

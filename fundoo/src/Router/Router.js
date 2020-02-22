@@ -12,7 +12,10 @@ import AddLabel from '../Component/AddLabel';
 import { Redirect } from 'react-router';
 import Profile from '../Component/Profile';
 import Drawer from '../Component/Drawer';
-import Archive from '../Component/Archive'
+import Archive from '../Component/Archive';
+import Trash from '../Component/Trash';
+import MenuList from '../Component/MenuList';
+
 
 const Router = () => {
     return (
@@ -21,16 +24,16 @@ const Router = () => {
             <Route path='/register' component={Register} />
             <Route path='/forgotpassword' component={ForgotPassword} />
             <Route path='/resetpassword' component={ResetPassword} />
-            <Route path='/dashboard/note' component={Dashboard} />
+            <Route path='/dashboard' component={Dashboard} />
             <Route path='/dashboard/note' component={Note} />
             <Route path='/notedialog' component={NoteDialog} />
             <Route path='/editlabel' component={EditLabel} />
             <Route path='/dashboard/note/addlabel' component={AddLabel} />
             <Route path='/profile' component={Profile} />
             <Route path='/drawer' component={Drawer} />
-            <Route path='/archive' component={Archive} />
-
-
+            <Route path='/dashboard/archive' component={Archive} />
+            <Route path='/dashboard/trash' component={Trash} />
+            <Route path='/menu' component={MenuList} />
 
         </BrowserRouter>
     );

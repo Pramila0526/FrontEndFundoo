@@ -139,9 +139,34 @@ export function addInArchive(id, token) {
         }
     });
 }
+
+export function addInTrash(id, token) {
+    console.log("In Services of Trash", id, token);
+    var data = null;
+    return axios.put("http://localhost:8080/note/deletenote/" + id, data, {
+
+        headers: {
+            "Content-Type": "appliaction/json; charset=utf-8",
+            token: token
+        }
+    });
+}
+
+
+
 export function getAllArchiveNotes(token) {
 
     return axios.get("http://localhost:8080/note/getallarchivenotes", {
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            token: token
+        }
+    });
+}
+
+export function getAllTrashNotes(token) {
+
+    return axios.get("http://localhost:8080/note/getalltrashnotes", {
         headers: {
             "Content-Type": "application/json; charset=utf-8",
             token: token

@@ -29,7 +29,8 @@ import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
 import BrushOutlinedIcon from '@material-ui/icons/BrushOutlined';
 import PhotoLibraryOutlinedIcon from '@material-ui/icons/PhotoLibraryOutlined';
 import ListDropDown from './ListDropDown'
-import Images from '../Image/images.png'
+import Images from '../Image/images.png';
+
 
 class WholeNote extends Component {
     constructor(props) {
@@ -134,7 +135,7 @@ class WholeNote extends Component {
 
                     <IconButton aria-label="More">
                         <Tooltip title="More">
-                            <MoreVertIcon />
+                            <ListDropDown />
                         </Tooltip>
                     </IconButton>
 

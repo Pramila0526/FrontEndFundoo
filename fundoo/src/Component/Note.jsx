@@ -4,7 +4,7 @@ import MiniNote from "./MiniNote";
 import WholeNote from './WholeNote';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { createNote } from '../Service/Service';
-import { getAllNotes, updateNote } from '../Service/Service';
+import { getAllNotes } from '../Service/Service';
 import NoteCard from './NoteCard';
 
 class Note extends Component {
@@ -32,7 +32,7 @@ class Note extends Component {
         })
     }
 
-    sentToBackEnd = () => {
+    createNoteToBackEnd = () => {
         let note = {};
         console.log("sent");
 
@@ -64,9 +64,10 @@ class Note extends Component {
             clickAway: false
 
         });
+
         console.log('click away');
         if (this.state.title !== '' || this.state.description !== '') {
-            this.sentToBackEnd()
+            this.createNoteToBackEnd()
             this.setState({
                 title: '',
                 description: '',
@@ -94,12 +95,13 @@ class Note extends Component {
     }
 
     componentDidMount() {
-        console.log('component did mount');
+        console.log('Component did mount');
 
         this.showAllNotes()
     }
 
     render() {
+        console.log("Inside Render", this.state);
 
         return (
             <Container style={{ marginTop: '6em' }} >

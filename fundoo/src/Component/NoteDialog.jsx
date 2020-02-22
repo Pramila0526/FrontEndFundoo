@@ -26,7 +26,8 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Popover from '@material-ui/core/Popover';
 import { makeStyles } from '@material-ui/core/styles';
 import ArchiveNotes from './ArchiveNotes'
-
+import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
+import ListDropDown from './ListDropDown'
 
 // const useStyles = makeStyles(theme => ({
 //     popover: {
@@ -58,10 +59,15 @@ export default function NoteDialog(data) {
 
     const [archive, setArchive] = React.useState(false);
 
+    const [trash, unTrash] = React.useState(false);
+
     const handleArchive = () => {
         setArchive(!archive)
     }
 
+    const handleTrash = () => {
+        unTrash(!trash)
+    }
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -206,9 +212,16 @@ export default function NoteDialog(data) {
                         </Tooltip>
                     </IconButton>
 
+                    {/* 
+                    <IconButton aria-label="Archive note">
+                        <Tooltip title="Archive">
+                            <DeleteOutlineOutlinedIcon onSelectTrash={handleTrash} data={data} />
+                        </Tooltip>
+                    </IconButton> */}
+
                     <IconButton aria-label="More">
                         <Tooltip title="More">
-                            <MoreVertIcon />
+                            <ListDropDown />
                         </Tooltip>
                     </IconButton>
 
@@ -260,14 +273,14 @@ export default function NoteDialog(data) {
 
                     <IconButton aria-label="Archive note">
                         <Tooltip title="Archive">
-                            <ArchiveIcon />
+                            <ArchiveNotes onSelectArchive={handleArchive} data={data} />
                         </Tooltip>
                     </IconButton>
 
 
                     <IconButton aria-label="More">
                         <Tooltip title="More">
-                            <MoreVertIcon />
+                            <ListDropDown />
                         </Tooltip>
                     </IconButton>
 

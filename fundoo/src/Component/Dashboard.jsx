@@ -77,11 +77,8 @@ class Dashboard extends Component {
         });
     };
 
-    handleArchiveNotes = () => {
-        this.props.history.push({
-            pathname: "/dashboard/note/archive",
-            state: { allNote: this.state.allNote }
-        });
+    handleShowAllArchiveNotes = () => {
+        this.props.history.push("/dashboard/note/archive");
     };
 
     render() {
@@ -95,11 +92,12 @@ class Dashboard extends Component {
                                 <div className="keepAndLogo">
                                     <div>
                                         <MyDrawer
-                                            handleLabelclick={this.showlabelnotehandle}
+                                            // handleLabelclick={this.showlabelnotehandle}
                                             showNoteclick={this.handleShowAllNotes}
                                             // trashclick={this.handleAllTrashnote}
                                             // reminderClick={this.handleAllReminderNote}
-                                            archiveclick={this.handlesAllArchivenote}
+                                            archiveclick={this.handleShowAllArchiveNote}
+                                            {...this.props}
                                         />
                                     </div>
 
@@ -192,5 +190,7 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+// export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+
+export default Dashboard;
 

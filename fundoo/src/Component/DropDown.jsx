@@ -12,6 +12,7 @@ import LabelOutlinedIcon from "@material-ui/icons/LabelOutlined";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import { label_id, drawer, openDrawer } from "../Redux/Action";
 import EditLabel from './EditLabel'
+import Archive from './ArchiveNotes';
 import { connect } from "react-redux";
 import '../CSSFile/DropDown.css'
 import { getAllNotes, getAllArchiveNotes } from '../Service/Service';
@@ -49,6 +50,12 @@ export class DropDown extends Component {
             open: !this.state.open
         });
     };
+
+    handleArchive = event => {
+
+
+    };
+
 
     // showAllNotes = () => {
 
@@ -96,7 +103,7 @@ export class DropDown extends Component {
                         <Drawer variant="persistent" anchor="left" open={open}>
                             <List>
                                 <ListItem className="over"
-                                    onClick={() => this.props.showAllNotes()}
+                                    onClick={() => this.props.history.push('/dashboard/note')}
                                     button
                                     key="Notes"
 
@@ -158,10 +165,11 @@ export class DropDown extends Component {
                             <Divider></Divider>
                             <List   >
                                 <ListItem
-                                    onClick={() => this.props.showAllArchiveNotes()}
+                                    // onClick={this.handleArchive}
                                     button
                                     key="Archive"
                                     className="over"
+                                    onClick={() => this.props.history.push('/dashboard/archive')}
                                 >
                                     <ListItemIcon>
                                         <ArchiveOutlinedIcon

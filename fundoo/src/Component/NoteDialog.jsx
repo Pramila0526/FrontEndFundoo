@@ -27,7 +27,11 @@ import Popover from '@material-ui/core/Popover';
 import { makeStyles } from '@material-ui/core/styles';
 import ArchiveNotes from './ArchiveNotes'
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
-import ListDropDown from './ListDropDown'
+import ListDropDown from './ListDropDown';
+import '../CSSFile/ListDropDown.css'
+import AddLabel from "./AddLabel";
+import TrashNote from './TrashNote';
+import { Menu, MenuItem } from '@material-ui/core';
 
 // const useStyles = makeStyles(theme => ({
 //     popover: {
@@ -39,7 +43,7 @@ import ListDropDown from './ListDropDown'
 // }));
 
 export default function NoteDialog(data) {
-    console.log('title=>', data.id);
+    console.log('title=>', data);
     // const classes = useStyles();
     // const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -59,15 +63,11 @@ export default function NoteDialog(data) {
 
     const [archive, setArchive] = React.useState(false);
 
-    const [trash, unTrash] = React.useState(false);
 
     const handleArchive = () => {
         setArchive(!archive)
     }
 
-    const handleTrash = () => {
-        unTrash(!trash)
-    }
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -76,6 +76,26 @@ export default function NoteDialog(data) {
     const handleClose = () => {
         setOpen(false);
     };
+
+    // For List DropDown
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const [trash, unTrash] = React.useState(false);
+
+    const handleTrash = () => {
+        unTrash(!trash)
+    }
+
+    const handleClick = event => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose1 = () => {
+        setAnchorEl(null);
+    };
+
+    const open1 = Boolean(anchorEl);
+
 
     const handleEditClose = () => {
         setOpen(false);
@@ -120,65 +140,14 @@ export default function NoteDialog(data) {
             })
     }
 
-
-    // const handleEditNote = () => {
-    //     let note = {};
-    //     note.title = title;
-    //     note.description = description;
-
-    //     let token = localStorage.getItem("Token");
-    //     console.log("Editing outside");
-
-    //     // let id = useParams.getItem("id");
-
-    //     updateNote(note, token)
-    //         .then(Response => {
-    //             console.log('res:----- ', Response);
-    //             console.log('res data:----- ', Response.data.data);
-    //             alert("Note Updated Successfully!!")
-    //         }).catch(error => {
-    //             console.log("Error", error.response)
-    //             console.log(error.response.message, "Note Not Updated");
-    //             alert("Note Not Updated")
-    //         })
-    // }
     return (
         <div>
-            {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-                Open alert dialog
-             </Button> */}
+
             <div >
-                {/* <Typography
-                    aria-owns={open1 ? 'mouse-over-popover' : undefined}
-                    aria-haspopup="true"
-                    onMouseEnter={handlePopoverOpen}
-                    onMouseLeave={handlePopoverClose}
-                > */}
 
-                <Typography onClick={handleClickOpen}> {data.title}</Typography>
+                <Typography onClick={handleClickOpen}>{data.title}</Typography>
 
-                <Typography onClick={handleClickOpen}> {data.description}</Typography>
-
-                {/* </Typography> */}
-                {/* <Popover
-                    id="mouse-over-popover"
-                    className={classes.popover}
-                    classes={{
-                        paper: classes.paper,
-                    }}
-                    open={open1}
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'left',
-                    }}
-                    // transformOrigin={{
-                    //     vertical: 'top',
-                    //     horizontal: 'left',
-                    // }}
-                    onClose={handlePopoverClose}
-                    disableRestoreFocus
-                > */}
+                <Typography onClick={handleClickOpen}>{data.description}</Typography>
 
                 <div className="iconsDialog" >
 
@@ -219,14 +188,13 @@ export default function NoteDialog(data) {
                         </Tooltip>
                     </IconButton> */}
 
-                    <IconButton aria-label="More">
-                        <Tooltip title="More">
-                            <ListDropDown />
+                    <IconButton aria-label="Trash">
+                        <Tooltip title="Trash">
+                            <ListDropDown data={data} />
                         </Tooltip>
                     </IconButton>
 
                 </div>
-                {/* </Popover> */}
 
             </div>
 

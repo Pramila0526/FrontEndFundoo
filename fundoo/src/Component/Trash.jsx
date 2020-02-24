@@ -35,8 +35,8 @@ class Trash extends Component {
 
             .then(Response => {
                 console.log("savg");
-                console.log('res:----- ', Response);
-                console.log('res data:----- ', Response.data.data);
+                console.log('Get All Trash Notes:----- ', Response);
+                // console.log('res data:----- ', Response.data.data);
                 this.setState({
                     notes: (Response.data.data).reverse()
                 })

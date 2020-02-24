@@ -23,7 +23,7 @@ const theme = createMuiTheme({
         MuiDrawer: {
             paper: {
                 marginTop: "70px",
-                width: "20%"
+                width: "23%"
             }
         }
     }
@@ -55,41 +55,6 @@ export class DropDown extends Component {
 
 
     };
-
-
-    // showAllNotes = () => {
-
-    //     let token = localStorage.getItem("Token");
-    //     console.log('show all notes');
-
-    //     getAllNotes(token)
-
-    //         .then(Response => {
-    //             console.log("savg");
-    //             console.log('res:----- ', Response);
-    //             console.log('res data:----- ', Response.data.data);
-    //             this.setState({
-    //                 notes: (Response.data.data).reverse()
-    //             })
-    //         })
-    // }
-
-    // showAllArchiveNotes = () => {
-
-    //     let token = localStorage.getItem("Token");
-    //     console.log('show all notes');
-
-    //     getAllArchiveNotes(token)
-
-    //         .then(Response => {
-    //             console.log("savg");
-    //             console.log('res:----- ', Response);
-    //             console.log('res data:----- ', Response.data.data);
-    //             this.setState({
-    //                 notes: (Response.data.data).reverse()
-    //             })
-    //         })
-    // }
 
     render() {
         let open = this.state.open;
@@ -128,6 +93,9 @@ export class DropDown extends Component {
 
                             <Divider></Divider>
 
+                            <Divider></Divider>
+
+                            <br />
                             <div
                                 className="label"
                             >
@@ -163,6 +131,7 @@ export class DropDown extends Component {
                                 </ListItem>
                             </List>
                             <Divider></Divider>
+                            <Divider></Divider>
                             <List   >
                                 <ListItem
                                     // onClick={this.handleArchive}
@@ -180,7 +149,7 @@ export class DropDown extends Component {
                                 <ListItem className="over"
                                     button
                                     key="Trash"
-
+                                    onClick={() => this.props.history.push('/dashboard/trash')}
                                 >
                                     <ListItemIcon>
                                         <DeleteOutlineOutlinedIcon />

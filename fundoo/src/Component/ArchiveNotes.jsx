@@ -14,6 +14,8 @@ class ArchiveNotes extends Component {
     constructor(props) {
         super(props)
         let token = localStorage.getItem("Token");
+        console.log("Props in Archive", props);
+
     }
 
     state = {
@@ -36,8 +38,12 @@ class ArchiveNotes extends Component {
     };
 
     handleaddArchiveChange = () => {
+        console.log("Archive change");
+
         let token = localStorage.getItem("Token");
         this.props.onSelectArchive(true);
+
+        console.log("Archive Props---", this.props);
 
         addInArchive(this.props.data.id, token)
             .then(Response => {
@@ -52,7 +58,6 @@ class ArchiveNotes extends Component {
     };
 
     render() {
-
         return (
             <div className={this.props.view ? (null) : ("footerpadding")} >
                 <Tooltip title=" Archive">

@@ -1,17 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
+import ArchiveOutlinedIcon from "@material-ui/icons/ArchiveOutlined";
 import { addInTrash } from "../Service/Service";
 import { Tooltip } from "@material-ui/core";
-
+import { Redirect } from 'react-router-dom'
+import Snackbar from '@material-ui/core/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
+import { Divider, IconButton } from "@material-ui/core";
+import { connect } from "react-redux";
+import { ADD_ARCHIVE } from "../Redux/ActionType";
+import React, { Component } from 'react';
 
-class TrashNote extends React.Component {
+class TrashNotes extends Component {
     constructor(props) {
         super(props)
         let token = localStorage.getItem("Token");
+        console.log("Props in constructor", props);
+
     }
 
     state = {
@@ -33,15 +37,16 @@ class TrashNote extends React.Component {
         this.setState({ anchorEl: null });
     };
 
-    handleTrashNotes = () => {
+    handleAddTrashChange = () => {
         let token = localStorage.getItem("Token");
         this.props.onSelectTrash(true);
+        // console.log(".....id", props);
 
-        addInTrash(this.props.data.id, token)
+        addInTrash(this.props.data.data.id, token)
             .then(Response => {
 
-                console.log("note is archive", Response);
-                alert(`${Response.data.data}`)
+                console.log("Note is trash", Response);
+                alert("Note Successfully Added to Trash!!")
 
             })
             .catch(err => {
@@ -50,17 +55,17 @@ class TrashNote extends React.Component {
     };
 
     render() {
+        // console.log("Trash notes", this.props.data.data.id);
 
         return (
             <div className={this.props.view ? (null) : ("footerpadding")} >
                 <Tooltip title=" Archive">
-                    <div onClick={this.handleTrashNotes} >Delete Note</div>
+                    <div onClick={this.handleAddTrashChange} >Trash Note</div>
                 </Tooltip>
-
             </div>
         );
     }
 }
 
 
-export default TrashNote;
+export default TrashNotes;

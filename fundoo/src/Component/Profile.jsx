@@ -6,6 +6,7 @@ import Divider from "@material-ui/core/Divider";
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import { IconButton } from "@material-ui/core";
+import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
 import {
     Avatar,
     TextField,
@@ -18,10 +19,13 @@ import Badge from "@material-ui/core/Badge";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import { changeProfile } from "../Service/Service";
 import Tooltip from '@material-ui/core/Tooltip';
+import '../CSSFile/Profile.css'
 
 const useStyles = makeStyles(theme => ({
     typography: {
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        width: "23em",
+        height: "30em"
     }
 }));
 
@@ -82,7 +86,7 @@ export default function SimplePopover(props) {
                 <Typography className={classes.typography}>
                     <div className="mainprofle">
                         <div
-                            style={{ justifyContent: "center", display: "flex", top: "3%" }}
+                            style={{ justifyContent: "center", display: "flex", top: "5%" }}
                         >
                             <Badge
                                 overlap="circle"
@@ -102,7 +106,7 @@ export default function SimplePopover(props) {
                                 />
                             </Badge>
                         </div>
-
+                        <br />
                         <div
                             style={{ justifyContent: "center", display: "flex", top: "4%" }}
                         >
@@ -117,7 +121,8 @@ export default function SimplePopover(props) {
                             {/* let alt={localStorage.getItem{"email"}} */}
                             <b>{email}</b>
                         </div>
-                        <div
+                        <br />
+                        {/* <div
                             style={{
                                 justifyContent: "center",
                                 display: "flex",
@@ -125,19 +130,30 @@ export default function SimplePopover(props) {
                                 padding: "2%"
                             }}
                         >
-                        </div>
-                        <div
-                            className="profileaccount"
-                            style={{
-                                backgroundColor: "#e0e0e0",
-                                padding: "3% ",
-                                paddingBottom: "3%",
-                                borderradius: "10px"
-                            }}
-                        >
-                            Manage Your Fundoo Account
+                        </div> */}
+                        <div className="manageAccount">
+                            <div
+                                className="profileAccount"
+                            // style={{
+                            //     backgroundColor: "white",
+                            //     height: "5vh",
+                            //     backgroundColor: "gray",
+                            //     borderRadius: "2em"
+                            // }}
+                            >
+                                Manage Your Fundoo Account
                          </div>
-
+                        </div>
+                        <br />
+                        <Divider />
+                        <br />
+                        <div className="addAccount">
+                            <div >
+                                <PersonAddOutlinedIcon />
+                            </div>
+                            <div className="addText"> Add Another Acoount
+                        </div></div>
+                        <br />
                         <Divider />
                         <div
                             style={{
@@ -156,12 +172,13 @@ export default function SimplePopover(props) {
                        </Button>
                         </div>
                         <Divider />
+                        <br />
                         <div className="profilefooter">
                             Privacy Policy . Terms of Service
-            </div>
+                        </div>
                     </div>
                 </Typography>
             </Popover>
-        </div>
+        </div >
     );
 }

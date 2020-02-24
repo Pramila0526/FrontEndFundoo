@@ -129,7 +129,7 @@ export function updateNote(id, updateNoteDto, token) {
 
 
 export function addInArchive(id, token) {
-    console.log("In Services", id, token);
+    console.log("Add in archive Services", id, token);
     var data = null;
     return axios.put("http://localhost:8080/note/archive/" + id, data, {
 
@@ -143,7 +143,7 @@ export function addInArchive(id, token) {
 export function addInTrash(id, token) {
     console.log("In Services of Trash", id, token);
     var data = null;
-    return axios.put("http://localhost:8080/note/deletenote/" + id, data, {
+    return axios.put("http://localhost:8080/note/trash/" + id, data, {
 
         headers: {
             "Content-Type": "appliaction/json; charset=utf-8",

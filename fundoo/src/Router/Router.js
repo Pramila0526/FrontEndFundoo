@@ -14,8 +14,6 @@ import Profile from '../Component/Profile';
 import Drawer from '../Component/Drawer';
 import Archive from '../Component/Archive';
 import Trash from '../Component/Trash';
-import MenuList from '../Component/MenuList';
-
 
 const Router = () => {
     return (
@@ -33,8 +31,6 @@ const Router = () => {
             <Route path='/drawer' component={Drawer} />
             <Route path='/dashboard/archive' component={Archive} />
             <Route path='/dashboard/trash' component={Trash} />
-            <Route path='/menu' component={MenuList} />
-
         </BrowserRouter>
     );
 };

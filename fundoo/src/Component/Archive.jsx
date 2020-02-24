@@ -29,10 +29,9 @@ class Archive extends Component {
     showAllArchiveNotes = () => {
 
         let token = localStorage.getItem("Token");
-        console.log('show all notes');
+        console.log('show all Archive notes');
 
         getAllArchiveNotes(token)
-
             .then(Response => {
                 console.log("savg");
                 console.log('res:----- ', Response);

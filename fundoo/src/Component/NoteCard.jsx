@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography, Dialog, TextField } from "@material-ui/core";
-import NoteDialog from './NoteDialog'
+import NoteDialog from './NoteDialog';
+import ListDropDown from './ListDropDown';
+
 const NoteCard = (props) => {
 
     return (
@@ -10,6 +12,7 @@ const NoteCard = (props) => {
             <NoteDialog id={props.items.id}
                 title={props.items.title}
                 description={props.items.description} />
+
             {/* <Dialog>Hello</Dialog> */}
         </div>
     );

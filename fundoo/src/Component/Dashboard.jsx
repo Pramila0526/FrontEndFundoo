@@ -81,6 +81,10 @@ class Dashboard extends Component {
         this.props.history.push("/dashboard/note/archive");
     };
 
+    handleShowAlTrashNotes = () => {
+        this.props.history.push("/dashboard/note/trash");
+    };
+
     render() {
         return (
             // <div className="backgrounddashboard">
@@ -94,9 +98,10 @@ class Dashboard extends Component {
                                         <MyDrawer
                                             // handleLabelclick={this.showlabelnotehandle}
                                             showNoteclick={this.handleShowAllNotes}
-                                            // trashclick={this.handleAllTrashnote}
-                                            // reminderClick={this.handleAllReminderNote}
                                             archiveclick={this.handleShowAllArchiveNote}
+                                            trashclick={this.handleShowAllTrashnote}
+                                            // reminderClick={this.handleAllReminderNote}
+
                                             {...this.props}
                                         />
                                     </div>
@@ -118,7 +123,8 @@ class Dashboard extends Component {
 
                                 <div className="dashboardSearch">
                                     <div className="dashboardsearchicon">
-                                        <SearchIcon onClick={this.getAllSearchNotes} />
+                                        <SearchIcon />
+                                        {/* onClick={this.getAllSearchNotes}  */}
                                     </div>
                                     <div style={{ width: "90%", height: "2vh" }}>
                                         <TextField
